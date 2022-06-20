@@ -9,8 +9,10 @@
  *  getLengthOfString("down");
  *  //> 4
  */
-function getLengthOfString(str) {}
-
+function getLengthOfString(str) {
+  return str.length
+}
+// console.log (getLengthOfString("string"))
 /**
  * convertToNumber()
  * ---------------------
@@ -22,7 +24,10 @@ function getLengthOfString(str) {}
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {}
+function convertToNumber(val) {
+  return Number(val)
+}
+// console.log (convertToNumber("str 16"))
 
 /**
  * convertToString()
@@ -36,7 +41,10 @@ function convertToNumber(val) {}
  *  convertToString(99);
  *  //> "99"
  */
-function convertToString(val) {}
+function convertToString(val) {
+  return String(val)
+}
+// console.log (typeof convertToString ("16"))
 
 /**
  * convertToShoutingText()
@@ -49,7 +57,9 @@ function convertToString(val) {}
  *  convertToShoutingText("Hello There");
  *  //> "HELLO THERE"
  */
-function convertToShoutingText(text) {}
+function convertToShoutingText(text) {
+  return text.toUpperCase()
+}
 
 /**
  * convertToWhisperText()
@@ -62,8 +72,11 @@ function convertToShoutingText(text) {}
  *  convertToWhisperText("Hello There");
  *  //> "hello there"
  */
-function convertToWhisperText(text) {}
+function convertToWhisperText(text) {
+  return text.toLowerCase()
+}
 
+// console.log (convertToWhisperText("HELLO"))
 /**
  * checkIfCharacterIsInString()
  * ---------------------
@@ -79,7 +92,10 @@ function convertToWhisperText(text) {}
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {}
+function checkIfCharacterIsInString(text, character) {
+  return text.includes(character)
+}
+// console.log (checkIfCharacterIsInString("hello there","k"))
 
 /**
  * isEven()
@@ -95,7 +111,14 @@ function checkIfCharacterIsInString(text, character) {}
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {}
+function isEven(num) {
+  if (num % 2){
+    return false
+  } else {
+    return true
+  }
+
+}
 
 /**
  * isOdd()
@@ -111,7 +134,15 @@ function isEven(num) {}
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {}
+function isOdd(num) {
+  if (num % 2){
+    return true
+  } else {
+    return false
+  }
+  
+}
+// console.log (isOdd(13))
 
 /**
  * isTruthy()
@@ -127,8 +158,13 @@ function isOdd(num) {}
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {}
-
+function isTruthy(val) {
+  if (val){
+    return true
+  } else {
+    return false
+  }
+}
 /**
  * isFalsy()
  * ---------------------
@@ -143,8 +179,15 @@ function isTruthy(val) {}
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {}
+function isFalsy(val) {
+  if (!val){
+    return true
+  } else {
+    return false
+  }
+}
 
+console.log (isFalsy())
 // Do not change the code below.
 module.exports = {
   getLengthOfString,
