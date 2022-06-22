@@ -182,6 +182,7 @@ function deleteKeyFromObject(object, key) {
   delete object[key]
   return object
 }
+
 console.log (deleteKeyFromObject({ left: true, right: false }, "left"))
 // Do not change any code below this line.
 module.exports = {
