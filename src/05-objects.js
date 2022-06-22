@@ -9,7 +9,12 @@
  *  createEmptyObject()
  *  //> {}
  */
-function createEmptyObject() {}
+function createEmptyObject() {
+  obj = {}
+  return obj
+}
+// console.log(createEmptyObject())
+// console.log(typeof createEmptyObject())
 
 /**
  * createObjectWithValue()
@@ -22,8 +27,11 @@ function createEmptyObject() {}
  *  createObjectWithValue(19);
  *  //> { whateverKey: 19 }
  */
-function createObjectWithValue(val) {}
-
+function createObjectWithValue(val) {
+  obj = {whateverKey: val}
+  return obj
+}
+// console.log(createObjectWithValue(19))
 /**
  * createObjectWithKey()
  * ---------------------
@@ -35,8 +43,18 @@ function createObjectWithValue(val) {}
  *  createObjectWithKey("left");
  *  //> { left: false }
  */
-function createObjectWithKey(key) {}
+function createObjectWithKey(key) {
 
+  const obj = {oldKey: false};
+  obj[key] = obj['oldKey'];
+  delete obj['oldKey'];
+  return obj
+}
+
+// const obj = {oldKey: false};
+// obj[key] = obj['oldKey'];
+// delete obj['oldKey'];
+// return obj
 /**
  * createObjectWithKeyValuePair()
  * ---------------------
@@ -49,7 +67,16 @@ function createObjectWithKey(key) {}
  *  createObjectWithKeyValuePair("left", "right");
  *  //> { left: "right" }
  */
-function createObjectWithKeyValuePair(key, val) {}
+function createObjectWithKeyValuePair(key, val) {
+  const obj = {};
+  obj[key] = val
+//alternate answer
+  // const obj = {oldKey: val};
+  // obj[key] = obj['oldKey'];
+  // delete obj['oldKey'];
+  return obj
+}
+// console.log (createObjectWithKeyValuePair("left","right"))
 
 /**
  * getNameFromObject()
@@ -62,7 +89,10 @@ function createObjectWithKeyValuePair(key, val) {}
  *  getNameFromObject({ name: "Jay" });
  *  //> "Jay"
  */
-function getNameFromObject(object) {}
+function getNameFromObject(object) {
+  obj = object
+  return obj.name
+}
 
 /**
  * getAgeFromObject()
@@ -75,7 +105,10 @@ function getNameFromObject(object) {}
  *  getAgeFromObject({ age: 30 });
  *  //> 30
  */
-function getAgeFromObject(object) {}
+function getAgeFromObject(object) {
+  obj = object
+  return obj.age
+}
 
 /**
  * addValueToObject()
@@ -89,7 +122,12 @@ function getAgeFromObject(object) {}
  *  addValueToObject({ left: true }, false);
  *  //> { left: true, key: false }
  */
-function addValueToObject(object, val) {}
+function addValueToObject(object, val) {
+  const obj = object
+     obj.key = val
+  return obj
+}
+// console.log (addValueToObject({ left: true }, false))
 
 /**
  * addKeyToObject()
@@ -103,8 +141,11 @@ function addValueToObject(object, val) {}
  *  addKeyToObject({ right: false }, "left");
  *  //> { right: false, left: true }
  */
-function addKeyToObject(object, key) {}
-
+function addKeyToObject(object, key) {
+  const obj = object
+  obj[key] = true
+return obj
+}
 /**
  * addKeyValuePairToObject()
  * ---------------------
@@ -118,8 +159,13 @@ function addKeyToObject(object, key) {}
  *  addKeyValuePairToObject({ up: true }, "left", false);
  *  //> { up: true, left: false }
  */
-function addKeyValuePairToObject(object, key, val) {}
+function addKeyValuePairToObject(object, key, val) {
+  const obj = object
+  obj[key] = val
+return obj
+}
 
+// console.log (addKeyValuePairToObject({ up: true }, "left", false))
 /**
  * deleteKeyFromObject()
  * ---------------------
@@ -132,8 +178,11 @@ function addKeyValuePairToObject(object, key, val) {}
  *  deleteKeyFromObject({ left: true, right: false }, "left");
  *  //> { right: false }
  */
-function deleteKeyFromObject(object, key) {}
-
+function deleteKeyFromObject(object, key) {
+  delete object[key]
+  return object
+}
+console.log (deleteKeyFromObject({ left: true, right: false }, "left"))
 // Do not change any code below this line.
 module.exports = {
   createEmptyObject,
