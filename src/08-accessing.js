@@ -1,5 +1,6 @@
 /*
   For all of the functions below, assume each function takes the following `person` object as its input. While the values of the object may change, the structure of it will always be the same.
+  */
 
   const person = {
     names: {
@@ -19,7 +20,6 @@
       7185558611
     ]
   }
-*/
 
 /**
  * getFirstName()
@@ -32,8 +32,12 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
-
+function getFirstName(person) {
+ let firstName = person.names.first
+return firstName
+}
+// console.log(person["names"]["first"])
+// console.log(getFirstName(person))
 /**
  * getLastName()
  * ---------------------
@@ -45,7 +49,10 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  let lastName = person.names.last
+  return lastName
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +65,10 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  let streetAddress = person.address.street
+  return streetAddress
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -71,8 +81,11 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
-
+function getCountOfPhoneNumbers(person) {
+  let count = person.numbers.length  
+  return count
+}
+// console.log(getCountOfPhoneNumbers(person))
 /**
  * getFirstPhoneNumber()
  * ---------------------
@@ -87,8 +100,12 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
-
+function getFirstPhoneNumber(person) {
+  let firstNum = person.numbers[0]
+  
+  return firstNum
+}
+// console.log(getFirstPhoneNumber(person))
 /**
  * getLastPhoneNumber()
  * ---------------------
@@ -103,7 +120,12 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  let lastNum = person.numbers[person.numbers.length-1]
+  
+  return lastNum
+}
+// console.log(getLastPhoneNumber(person))
 
 /**
  * getFullName()
@@ -116,8 +138,12 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
-
+function getFullName(person) {
+  let fullName = `${person.names.first} ${person.names.middle} ${person.names.last}`
+  
+  return fullName
+}
+// console.log(getFullName(person))
 /**
  * getCityAndState()
  * ---------------------
@@ -132,8 +158,12 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
-
+function getCityAndState(person) {
+  let cityAndState = `${person.address.city}, ${person.address.state}`
+  
+  return cityAndState
+}
+// console.log(getCityAndState(person))
 /**
  * getFullAddress()
  * ---------------------
@@ -148,8 +178,12 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
-
+function getFullAddress(person) {
+  let fullAddress = `${person.address.street} ${person.address.unit}, ${person.address.city}, ${person.address.state}, ${person.address.zip}`
+  
+  return fullAddress
+}
+// console.log(getFullAddress(person))
 /**
  * getFlatObject()
  * ---------------------
@@ -171,8 +205,21 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+function getFlatObject(person) {
+  let obj= {}
+  obj["first"] = person.names.first
+  obj["middle"] = person.names.middle
+  obj["last"] = person.names.last
+  obj["street"] = person.address.street
+  obj["unit"] = person.address.unit
+  obj["city"] = person.address.city
+  obj["state"] = person.address.state
+  obj["zip"] = person.address.zip
+  obj["numbers"] = person.numbers
 
+  return obj
+}
+console.log(getFlatObject(person) )
 // Do not change the code below.
 module.exports = {
   getFirstName,
